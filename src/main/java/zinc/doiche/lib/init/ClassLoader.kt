@@ -1,4 +1,4 @@
-package zinc.doiche.lib
+package zinc.doiche.lib.init
 
 import java.io.File
 import java.nio.file.Paths
