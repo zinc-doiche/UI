@@ -1,6 +1,5 @@
 package zinc.doiche.lib.service
 
-import zinc.doiche.Main
 import zinc.doiche.lib.init.ClassLoader
 
 interface IService {
@@ -10,7 +9,7 @@ interface IService {
     fun load()
 }
 
-internal fun Main.processAll(): List<IService> {
+internal fun processAll(): List<IService> {
     val loader = ClassLoader()
     val services = HashMap<IService, Int>()
     val sortedServices = ArrayList<IService>()
@@ -19,7 +18,7 @@ internal fun Main.processAll(): List<IService> {
         val priority = serviceAnnotation.priority
         val constructor = clazz.getConstructor()
         val service = constructor.newInstance()
-        if(service !is IService) {
+        if(service !is IService || clazz.isInterface) {
             return@process
         }
         services[service] = priority

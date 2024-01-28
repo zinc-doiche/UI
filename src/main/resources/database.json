@@ -1,0 +1,10 @@
+{
+    "host": "localhost",
+    "port": 27017,
+    "database": "database",
+    "username": "",
+    "password": "",
+    "options": {
+        "authSource": "admin"
+    }
+}
