@@ -4,6 +4,7 @@ import net.kyori.adventure.bossbar.BossBar
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.minimessage.MiniMessage
 import org.bukkit.entity.Player
+import zinc.doiche.lib.repository.LocalRepository
 import zinc.doiche.lib.repository.Repository
 import zinc.doiche.plugin
 
@@ -22,17 +23,21 @@ class HUD(
         player.showBossBar(bossbar)
     }
 
-    companion object: Repository<String, HUD> {
-        private const val path = "hud.json"
+    companion object: LocalRepository<String, HUD> {
+        override val filePath = "hud.json"
         private val huds = HashMap<String, HUD>()
 
         override operator fun get(key: String): HUD? {
             return huds[key]
         }
 
+        override fun remove(key: String) {
+            huds.remove(key)
+        }
+
         override fun read() {
             huds.clear()
-            plugin.openFile(path) { file ->
+            plugin.openFile(filePath) { file ->
                 val json = plugin.gson.fromJson(file.readText(), Array<HUD>::class.java)
                 json.forEach { hud ->
                     hud.init()
