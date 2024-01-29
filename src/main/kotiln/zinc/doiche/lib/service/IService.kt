@@ -2,6 +2,7 @@ package zinc.doiche.lib.service
 
 import zinc.doiche.lib.init.ClassLoader
 
+@Service
 interface IService {
     fun enable()
     fun disable()

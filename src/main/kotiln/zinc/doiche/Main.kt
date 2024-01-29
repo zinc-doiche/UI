@@ -1,6 +1,7 @@
 package zinc.doiche;
 
 import com.google.gson.Gson
+import org.bukkit.event.Listener
 import org.bukkit.plugin.java.JavaPlugin
 import zinc.doiche.lib.database.MongoDB
 import zinc.doiche.lib.service.IService
@@ -22,6 +23,12 @@ class Main: JavaPlugin() {
 
     override fun onDisable() {
         services.forEach(IService::disable)
+    }
+
+    fun register(vararg listeners: Listener) {
+        listeners.forEach {
+            server.pluginManager.registerEvents(it, this)
+        }
     }
 
     fun openFile(path: String, config: (File) -> Unit) {

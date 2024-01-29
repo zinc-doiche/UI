@@ -5,6 +5,7 @@ import org.bson.Document
 import zinc.doiche.lib.database.collection.KeyedCollection
 import zinc.doiche.lib.database.MongoDB
 import zinc.doiche.service.user.`object`.User
+import zinc.doiche.util.toDocument
 import zinc.doiche.util.toObject
 import java.util.UUID
 
@@ -13,8 +14,12 @@ object UserCollection : KeyedCollection<UUID, User>() {
     override val collection = MongoDB[name]
     override val keyName: String = "uuid"
 
+    override fun save(value: User) {
+        collection.insertOne(value.toDocument())
+    }
+
     override fun findByKey(key: UUID): User? {
-        val document = collection.find(Filters.eq(keyName, key)).first()
+        val document = collection.find(Filters.eq(keyName, key.toString())).first()
         return document?.toObject(User::class.java)
     }
 

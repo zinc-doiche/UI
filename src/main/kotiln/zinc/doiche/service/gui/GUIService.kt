@@ -1,10 +1,10 @@
-package zinc.doiche.service.user
+package zinc.doiche.service.gui
 
 import zinc.doiche.lib.service.IService
-import zinc.doiche.lib.service.Service
+import zinc.doiche.plugin
+import zinc.doiche.service.gui.listener.GUIListener
 
-@Service
-class UserService : IService {
+class GUIService: IService {
     override fun enable() {
         TODO("Not yet implemented")
     }
@@ -14,7 +14,9 @@ class UserService : IService {
     }
 
     override fun register() {
-        TODO("Not yet implemented")
+        plugin.register(
+            GUIListener()
+        )
     }
 
     override fun load() {

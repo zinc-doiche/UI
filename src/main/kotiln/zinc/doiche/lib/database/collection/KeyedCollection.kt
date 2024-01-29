@@ -2,9 +2,7 @@ package zinc.doiche.lib.database.collection
 
 import com.mongodb.client.MongoCollection
 import com.mongodb.client.model.Filters.eq
-import com.mongodb.client.result.InsertOneResult
 import org.bson.Document
-import org.bson.types.ObjectId
 
 abstract class KeyedCollection<K, E> {
     abstract val name: String
@@ -24,6 +22,8 @@ abstract class KeyedCollection<K, E> {
     open fun save(document: Document) {
         collection.insertOne(document)
     }
+
+    abstract fun save(value: E)
 
     open fun findAll(): List<Document> {
         return collection.find().toList()
