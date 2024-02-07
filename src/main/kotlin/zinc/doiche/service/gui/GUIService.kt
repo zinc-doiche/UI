@@ -7,6 +7,7 @@ import zinc.doiche.service.gui.listener.GUIListener
 class GUIService: IService {
     override fun enable() {
         TODO("Not yet implemented")
+        
     }
 
     override fun disable() {
