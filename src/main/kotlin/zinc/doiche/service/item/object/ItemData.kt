@@ -19,14 +19,14 @@ data class ItemData(
         get() = material.maxStackSize
 
     fun get(amount: Int = 1): ItemStack {
-       return item(material, getDisplayName(), getLore())
+       return item(material, displayName(), lore())
     }
 
-    fun getDisplayName(): Component {
+    fun displayName(): Component {
         return MiniMessage.miniMessage().deserialize(displayName)
     }
 
-    fun getLore(): List<Component> {
+    fun lore(): List<Component> {
         val miniMessage = MiniMessage.miniMessage()
         return lore.map { miniMessage.deserialize(it) }
     }

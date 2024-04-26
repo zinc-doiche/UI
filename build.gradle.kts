@@ -19,6 +19,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
     implementation("io.github.monun:kommand-api:3.1.7")
     implementation("org.mongodb:mongodb-driver-sync:4.9.0")
+    implementation(kotlin("reflect"))
 }
 
 //의존성 탐색하도록 설정(duplicatesStrategy 설정시 필요)
