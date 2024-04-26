@@ -1,6 +1,7 @@
 package zinc.doiche.lib
 
-import zinc.doiche.plugin
+import zinc.doiche.Main.Companion.plugin
+
 
 abstract class Loggable {
     fun info(message: Any?, vararg args: Any) {

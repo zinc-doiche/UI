@@ -8,6 +8,9 @@ import zinc.doiche.lib.service.IService
 import zinc.doiche.lib.service.processAll
 import java.io.File
 
+internal lateinit var plugin: Main
+    private set
+
 class Main: JavaPlugin() {
     lateinit var services: List<IService>
         private set
@@ -39,6 +42,3 @@ class Main: JavaPlugin() {
         config(file)
     }
 }
-
-internal lateinit var plugin: Main
-    private set

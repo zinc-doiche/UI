@@ -17,6 +17,7 @@ dependencies {
     paperweight.paperDevBundle("1.20.1-R0.1-SNAPSHOT")
     compileOnly("com.google.code.gson:gson:2.10.1")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
+    implementation("io.github.monun:kommand-api:3.1.7")
     implementation("org.mongodb:mongodb-driver-sync:4.9.0")
 }
 

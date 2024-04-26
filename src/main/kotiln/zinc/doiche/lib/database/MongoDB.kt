@@ -7,7 +7,7 @@ import com.mongodb.client.MongoClients
 import com.mongodb.client.MongoCollection
 import com.mongodb.client.MongoDatabase
 import org.bson.Document
-import zinc.doiche.plugin
+import zinc.doiche.Main.Companion.plugin
 import java.io.FileReader
 
 object MongoDB {

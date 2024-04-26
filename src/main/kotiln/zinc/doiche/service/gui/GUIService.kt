@@ -1,7 +1,7 @@
 package zinc.doiche.service.gui
 
+import zinc.doiche.Main.Companion.plugin
 import zinc.doiche.lib.service.IService
-import zinc.doiche.plugin
 import zinc.doiche.service.gui.listener.GUIListener
 
 class GUIService: IService {

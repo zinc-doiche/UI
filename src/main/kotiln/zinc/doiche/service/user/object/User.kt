@@ -15,6 +15,10 @@ data class User(
             return users[key]
         }
 
+        override fun contains(key: UUID): Boolean {
+            return users.containsKey(key)
+        }
+
         override fun remove(key: UUID) {
             users.remove(key)
         }

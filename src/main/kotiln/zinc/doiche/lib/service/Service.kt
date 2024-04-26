@@ -1,8 +1,12 @@
 package zinc.doiche.lib.service
 
-import java.lang.annotation.Inherited
+@Service
+interface IService {
+    fun enable()
+    fun disable()
+    fun register()
+    fun load()
+}
 
-@Target(AnnotationTarget.CLASS)
-@Retention(AnnotationRetention.RUNTIME)
-@Inherited
-annotation class Service(val priority: Int = 0)
+//TODO 인페 다 만들기
+

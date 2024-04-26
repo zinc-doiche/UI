@@ -6,9 +6,9 @@ import java.util.UUID
 
 interface GUIHolder: InventoryHolder {
     val uuid: UUID
+    val gui: GUI
 
     fun open()
-    fun onEvent(event: InventoryEvent, eventType: EventType)
 
     enum class EventType {
         CLICK,

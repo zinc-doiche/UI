@@ -4,9 +4,8 @@ import net.kyori.adventure.bossbar.BossBar
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.minimessage.MiniMessage
 import org.bukkit.entity.Player
+import zinc.doiche.Main.Companion.plugin
 import zinc.doiche.lib.repository.LocalRepository
-import zinc.doiche.lib.repository.Repository
-import zinc.doiche.plugin
 
 class HUD(
     val name: String,
@@ -29,6 +28,10 @@ class HUD(
 
         override operator fun get(key: String): HUD? {
             return huds[key]
+        }
+
+        override fun contains(key: String): Boolean {
+            return huds.containsKey(key)
         }
 
         override fun remove(key: String) {

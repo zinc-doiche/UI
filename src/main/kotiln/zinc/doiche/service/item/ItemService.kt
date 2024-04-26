@@ -1,6 +1,7 @@
 package zinc.doiche.service.item
 
 import zinc.doiche.lib.service.IService
+import zinc.doiche.service.item.command.ItemCommand
 import zinc.doiche.service.item.`object`.ServerItemData
 
 class ItemService: IService {
@@ -13,7 +14,7 @@ class ItemService: IService {
     }
 
     override fun register() {
-        TODO()
+        ItemCommand.register()
     }
 
     override fun load() {
